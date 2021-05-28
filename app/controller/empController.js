@@ -59,7 +59,7 @@ exports.update=(req,res)=>{
     .then(result=>{
         if(!result){
             return res.status(404).send({
-                message:"Id not found"
+                message:"Id is not found"
             })
         }
         else res.send({ message: "Data was updated successfully." });  
@@ -78,7 +78,7 @@ exports.delete = (req,res)=>{
                 message:"Id is not found"+req.params.id
             })
         }
-        else  res.send({message: "Note deleted successfully!"});
+        else  res.send({message: "Data deleted successfully!"});
     }).catch(err=>{
         res.status(500).send({
             message:"Error occured"
